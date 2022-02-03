@@ -4,6 +4,15 @@ import os
 from model import ModelObject
 from database_handler import SimpleDatabase
 
+"""
+add custom table making/ custom model making
+"""
+
+
+def clear_screen():
+    cols, rows = os.get_terminal_size()
+    # os.system("cls")
+    print(f"{cols*'-'}")
 
 class DatabaseFrontend:
     def __init__(self, reference_file="db_list.txt", model_object=None) -> None:
@@ -99,10 +108,11 @@ class DatabaseFrontend:
             self.running_database = SimpleDatabase(new_db[0], new_db[1])
             # Save new database
         else:
+            print("Select a Database( use number or new ): \n")
             for _, choice in enumerate(self.db_list):
-                print(f"[{_}]: {choice[0]} {choice[1]}")
+                print(f" [{_}]: {choice[0]} {choice[1]}")
 
-            db_choice = input("Select a Database( use number or new ): ")
+            db_choice = input("\n>>> ")
 
             if db_choice == "new":
                 self.select_database(True)
@@ -134,7 +144,8 @@ Insert Object (space seperated):
             self.running_database.delete_data_point(model.key2)
 
     def run(self):
-        top_text = "\nWelcome! Choose an Option to Start!:"
+        clear_screen()
+        top_text = "Welcome! Choose an Option to Start!:"
         run_options = f"""
     [S]: Select New Database
     
@@ -145,14 +156,15 @@ Insert Object (space seperated):
     [Q]: Quit Program
 {self.cols*'_'}"""
         while True:
-            current_database = f"Current Database: {self.db_name}  {self.table_name}"
+            current_database = f"Current Database: {self.db_name} Table: {self.table_name}"
             
             final_text = f"""
 {top_text}
+{self}
 {current_database}
 {run_options}
 """
-            
+            clear_screen()
             print(final_text)
             user_input = input(">>> ")
 
@@ -175,6 +187,8 @@ Insert Object (space seperated):
             # Remove
             if user_input.lower() == 'd':
                 print(f"TBI: HeHeHe sorry!")
+            
+            input("\nPress [Enter] to Continue...")
 
 
 if __name__ == "__main__":
