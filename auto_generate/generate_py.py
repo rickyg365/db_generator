@@ -1,4 +1,7 @@
 import os
+
+import json
+
 from typing import List, Dict
 
 
@@ -50,24 +53,11 @@ if __name__ == '__main__':
 
 
 def main():
-    settings = {
-        "file_name": "test_auto_generate.py",
-        "model_name": "TestObject",
-        "attributes": {
-            "key": "int",
-            "name": "str",
-            "tags": "List[str]",
-            "status": "int"
-        },
-        "sample_data": {
-            "key": 0,
-            "name": "test name",
-            "tags": ["new", "test"],
-            "status": 1
-        }
-    }
-
-    make_file(**settings)
+    # Load settings from json
+    with open("auto_settings.json", 'r') as input_settings:
+        new_settings = json.load(input_settings)
+    
+    make_file(**new_settings)
 
 
 if __name__ == "__main__":

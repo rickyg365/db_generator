@@ -1,5 +1,5 @@
 {
-    "file_name": "test_auto_generate.py",
+    "file_name": "outputs/test_auto_generate.py",
     "model_name": "TestObject",
     "attributes": {
         "key": "int",
