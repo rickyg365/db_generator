@@ -1,0 +1,16 @@
+{
+    "file_name": "test_auto_generate.py",
+    "model_name": "TestObject",
+    "attributes": {
+        "key": "int",
+        "name": "str",
+        "tags": "List[str]",
+        "status": "int"
+    },
+    "sample_data": {
+        "key": 0,
+        "name": "test name",
+        "tags": ["new", "test"],
+        "status": 1
+    }
+}
