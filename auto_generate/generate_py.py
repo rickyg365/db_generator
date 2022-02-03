@@ -51,7 +51,6 @@ if __name__ == '__main__':
         new_file.write(new_text)
 
 
-
 def main():
     # Load settings from json
     with open("auto_settings.json", 'r') as input_settings:
