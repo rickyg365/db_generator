@@ -22,7 +22,7 @@ def make_data_text(raw_data:Dict[str, str], attributes:Dict[str,str]):
         output += f"{data_key}={data_val}, "
     return output
 
-def make_file(attributes: Dict[str,str], sample_data: Dict[str, str]=None, model_name:str="AutoObject", file_name:str="auto_generated.py"):
+def make_file(attributes: Dict[str,str], sample_data: Dict[str, str]=None, model_name:str="AutoObject", file_name:str="auto_generated.py", handler_name:str=None, database:List[str]=None, ref_index:str=""):
     # make new text file
     
     # Make Attribute Text

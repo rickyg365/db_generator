@@ -1,6 +1,6 @@
 {
-    "file_name": "outputs/test_auto_generate.py",
-    "handler_name": "outputs/test_db_handler.py",
+    "file_name": "new/test_auto_generate.py",
+    "handler_name": "new/test_db_handler.py",
     "model_name": "TestObject",
     "ref_index": "key",
     "database": ["random.db", "rando"],
